@@ -21,7 +21,7 @@ public class DSLista_test extends ListGenerator{
 		
 		
 		try {
-			CvorDSListe a = o.zameniPrvaDva(lista);
+			CvorDSListe a = o.zameniPrvaDva(lista.prvi);
 			System.out.println("________________");
 			ListGenerator.ispisiDSListu(a);
 		} catch (LabisException e) {

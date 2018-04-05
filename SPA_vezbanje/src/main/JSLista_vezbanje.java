@@ -7,16 +7,16 @@ import labis.liste.AJSLista;
 public class JSLista_vezbanje extends AJSLista{
 	
 	//zadaci za vezbanje 11
-	public int vratiNajduzuNeopadajucuPodlistu(AJSLista lista) throws LabisException{
+	public int vratiNajduzuNeopadajucuPodlistu(CvorJSListe prvi) throws LabisException{
 		
-		if(lista.prvi == null) {
+		if(prvi == null) {
 			throw new LabisException("Lista ne postoji");
 		}
-		if(lista.prvi.sledeci == null) {
+		if(prvi.sledeci == null) {
 			return 1;
 		}
 		
-		CvorJSListe pom = lista.prvi;
+		CvorJSListe pom = prvi;
 		int brojac = 1;
 		int najduzi = 0;
 		while(pom.sledeci != null) {
@@ -40,40 +40,40 @@ public class JSLista_vezbanje extends AJSLista{
 	
 	//zadaci za vezbanje 14
 	
-	public CvorJSListe izbaci2i3odpozadi(AJSLista a) throws LabisException {
+	public CvorJSListe izbaci2i3odpozadi(CvorJSListe prvi) throws LabisException {
 		
-		if(a.prvi == null) {
+		if(prvi == null) {
 			throw new LabisException("Lista ne postoji");
 		}
-		if( a.prvi.sledeci == null) {
+		if( prvi.sledeci == null) {
 			throw new LabisException("U lisit ima samo 1 element");
 		}
-		if(a.prvi.sledeci.sledeci == null) {
+		if(prvi.sledeci.sledeci == null) {
 			throw new LabisException("U lisiti ima samo 2 elementa");
 		}
-		if(a.prvi.sledeci.sledeci.sledeci == null) {
-			return a.prvi.sledeci.sledeci;
+		if(prvi.sledeci.sledeci.sledeci == null) {
+			return prvi.sledeci.sledeci;
 		}
-		CvorJSListe pom = a.prvi;
+		CvorJSListe pom = prvi;
 		int brojac = 0;
 		while(pom != null) {
 			brojac++;
 			pom = pom.sledeci;
 		}
 		System.out.println(brojac);
-		pom = a.prvi;
+		pom = prvi;
 		for(int i = 0; i<brojac - 3; i++) {
 			pom = pom.sledeci;
 		}
 		pom.sledeci = pom.sledeci.sledeci;
 		
-		pom = a.prvi;
+		pom = prvi;
 		for(int i = 0; i<brojac - 4; i++) {
 			pom = pom.sledeci;
 		}
 		pom.sledeci = pom.sledeci.sledeci;
 		
-		return a.prvi;
+		return prvi;
 	}
 
 }

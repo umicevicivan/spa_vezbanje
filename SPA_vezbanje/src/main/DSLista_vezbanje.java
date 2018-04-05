@@ -7,28 +7,28 @@ import labis.liste.ADSLista;
 public class DSLista_vezbanje extends ADSLista{
 	
 	//oleee radi
-	public CvorDSListe zameniPrvaDva(ADSLista a) throws LabisException{
+	public CvorDSListe zameniPrvaDva(CvorDSListe prvi) throws LabisException{
 		
-		if(a.prvi == null) {
+		if(prvi == null) {
 			throw new LabisException("Lista ne postoji");
 		}
-		if(a.prvi.sledeci == null) {
+		if(prvi.sledeci == null) {
 			throw new LabisException("U listi je samo jedan element");
 		}
 		
-		a.prvi = a.prvi.sledeci;
+		prvi = prvi.sledeci;
 
-		a.prvi.prethodni.sledeci = a.prvi.sledeci;
+		prvi.prethodni.sledeci = prvi.sledeci;
 		
-		a.prvi.sledeci = a.prvi.prethodni;
+		prvi.sledeci = prvi.prethodni;
 		
-		a.prvi.prethodni = a.prvi.sledeci.prethodni;
+		prvi.prethodni = prvi.sledeci.prethodni;
 		
-		a.prvi.sledeci.prethodni = a.prvi;
+		prvi.sledeci.prethodni = prvi;
 		
-		a.prvi.sledeci.sledeci.prethodni = a.prvi.sledeci;
+		prvi.sledeci.sledeci.prethodni = prvi.sledeci;
 		
-		return a.prvi;
+		return prvi;
 	}
 
 }

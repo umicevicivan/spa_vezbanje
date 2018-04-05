@@ -20,7 +20,7 @@ public class JSLista_test extends ListGenerator{
 		ListGenerator.ispisiJSListu(lista.prvi);
 		
 //		try {
-//			int a = o.vratiNajduzuNeopadajucuPodlistu(lista);
+//			int a = o.vratiNajduzuNeopadajucuPodlistu(lista.prvi);
 //			System.out.println(a);
 //			
 //		} catch (LabisException e) {
@@ -29,7 +29,7 @@ public class JSLista_test extends ListGenerator{
 		
 		CvorJSListe a;
 		try {
-			a = o.izbaci2i3odpozadi(lista);
+			a = o.izbaci2i3odpozadi(lista.prvi);
 			System.out.println("________________");
 			ListGenerator.ispisiJSListu(a);
 		} catch (LabisException e) {
