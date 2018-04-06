@@ -6,8 +6,8 @@ import main.Nizovi_sam;
 public class Nizovi_test {
 
 	public static void main(String[] args) throws LabisException {
-		int[] a = new int[] {9,7,1,8,14,12,11};
-		int[] k = null;
+		int[] a = new int[] {9,7,1,8,14,2,11};
+		//int[] k = null;
 		Nizovi_sam o = new Nizovi_sam();
 		int[] b = new int[5];
 		b[0] = 5;

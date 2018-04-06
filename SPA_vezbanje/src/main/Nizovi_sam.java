@@ -83,11 +83,12 @@ public class Nizovi_sam extends ANiz {
 			throw new LabisException("Niz ne postoji");
 		}
 		if(a.length < 3) {
-			throw new LabisException("u nizu ima manje od 3 elementa");
+			throw new LabisException("U nizu ima manje od 3 elementa");
 		}
-		int m1 = -1;
-		int m2 = -1;
-		int m3 = -1;
+		
+		int m1 = Integer.MIN_VALUE;
+		int m2 = Integer.MIN_VALUE;
+		int m3 = Integer.MIN_VALUE;
 
 		
 		for (int i = 0; i < a.length; i++) {

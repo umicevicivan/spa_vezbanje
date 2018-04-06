@@ -60,30 +60,25 @@ public class JSLista_vezbanje extends AJSLista{
 			brojac++;
 			pom = pom.sledeci;
 		}
-		System.out.println(brojac);
-		pom = prvi;
-		for(int i = 0; i<brojac - 3; i++) {
-			pom = pom.sledeci;
-		}
-		pom.sledeci = pom.sledeci.sledeci;
+		//System.out.println(brojac);
 		
 		pom = prvi;
 		for(int i = 0; i<brojac - 4; i++) {
 			pom = pom.sledeci;
 		}
-		pom.sledeci = pom.sledeci.sledeci;
+		pom.sledeci = pom.sledeci.sledeci.sledeci;
 		
 		return prvi;
 	}
 	
-	public double prosekpozitivnih(CvorJSListe prvi) throws LabisException {
+	public double prosekParnih(CvorJSListe prvi) throws LabisException {
 		
 		if (prvi == null) {
 			throw new LabisException("Lisa je prazna");
 		}
 		
 		CvorJSListe pom = prvi;
-		int suma = 0;
+		double suma = 0;
 		int brojac = 0;
 		
 		while(pom != null) {
@@ -94,7 +89,7 @@ public class JSLista_vezbanje extends AJSLista{
 			pom = pom.sledeci;
 		}
 		if(brojac != 0) {
-			return (double)(suma)/(double)(brojac);
+			return suma/brojac;
 		}
 		
 		throw new LabisException("U lisit nema parnih");
@@ -117,8 +112,8 @@ public class JSLista_vezbanje extends AJSLista{
 			suma = suma + pom.podatak;
 		}
 		
-		CvorJSListe abc = new CvorJSListe(p, pom.sledeci);
-		pom.sledeci = abc;
+		CvorJSListe novi = new CvorJSListe(p, pom.sledeci);
+		pom.sledeci = novi;
 		
 		return prvi;
 		

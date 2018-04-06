@@ -10,18 +10,19 @@ public class JSLista_test extends ListGenerator{
 
 	public static void main(String[] args) {
 		
-		int[] niz = new int[] {1,2,3,4,5,6};	
+		int[] niz = new int[] {1,2,3,3,5,6};	
 		AJSLista lista = new AJSLista() {
 		};
-		CvorJSListe a;
 		ListGenerator.napraviJSListuCommon(lista, niz, false);
+		
+		CvorJSListe a;
 		
 		JSLista_vezbanje o = new JSLista_vezbanje();
 		ListGenerator.ispisiJSListu(lista.prvi);
 		
 //		try {
-//			int a = o.vratiNajduzuNeopadajucuPodlistu(lista.prvi);
-//			System.out.println(a);
+//			int k = o.vratiNajduzuNeopadajucuPodlistu(lista.prvi);
+//			System.out.println(k);
 //			
 //		} catch (LabisException e) {
 //			System.out.println(e);
@@ -37,7 +38,7 @@ public class JSLista_test extends ListGenerator{
 //		}
 		
 //		try {
-//			double b = o.prosekpozitivnih(lista.prvi);
+//			double b = o.prosekParnih(lista.prvi);
 //			System.out.println("________________");
 //			System.out.println(b);
 //		} catch (LabisException e) {

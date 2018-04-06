@@ -10,7 +10,7 @@ public class DSLista_test extends ListGenerator{
 
 	public static void main(String[] args) {
 		
-		int[] niz = new int[] {1};
+		int[] niz = new int[] {};
 		ADSLista lista = new ADSLista() {
 		};
 		ListGenerator.napraviDSListuCommon(lista, niz, false);
@@ -20,9 +20,23 @@ public class DSLista_test extends ListGenerator{
 		
 		
 		
+//		try {
+//			CvorDSListe a = o.zameniPrvaDva(lista.prvi);
+//			System.out.println("________________");
+//			ListGenerator.ispisiDSListu(a);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			System.out.println(o.vratiProizvod(lista.prvi));
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
 		try {
-			CvorDSListe a = o.zameniPrvaDva(lista.prvi);
-			System.out.println("________________");
+			CvorDSListe a = o.kloniraj(lista.prvi);
+			System.out.println("___________");
 			ListGenerator.ispisiDSListu(a);
 		} catch (LabisException e) {
 			System.out.println(e);
