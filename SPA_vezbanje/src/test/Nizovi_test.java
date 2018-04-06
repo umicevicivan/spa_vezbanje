@@ -6,13 +6,8 @@ import main.Nizovi_sam;
 public class Nizovi_test {
 
 	public static void main(String[] args) throws LabisException {
-		int[] a = new int[5];
-		a[0] = 1;
-		a[1] = 1;
-		a[2] = 2;
-		a[3] = 333;
-		a[4] = 333;
-
+		int[] a = new int[] {9,7,1,8,14,12,11};
+		int[] k = null;
 		Nizovi_sam o = new Nizovi_sam();
 		int[] b = new int[5];
 		b[0] = 5;
@@ -33,9 +28,16 @@ public class Nizovi_test {
 		//	System.out.println(e);
 		//}
 		
-		int[] novi = o.zzv22(a, b);
-		for(int i = 0; i<novi.length; i++) {
-			System.out.println(novi[i]);
+//		int[] novi = o.zzv22(a, b);
+//		for(int i = 0; i<novi.length; i++) {
+//			System.out.println(novi[i]);
+//		}
+		
+		try {
+			int p = o.treciNajveci(a);
+			System.out.println(p);
+		} catch (LabisException e) {
+			System.out.println(e);
 		}
 	}
 }

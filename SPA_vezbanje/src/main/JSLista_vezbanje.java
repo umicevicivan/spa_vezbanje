@@ -75,5 +75,55 @@ public class JSLista_vezbanje extends AJSLista{
 		
 		return prvi;
 	}
-
+	
+	public double prosekpozitivnih(CvorJSListe prvi) throws LabisException {
+		
+		if (prvi == null) {
+			throw new LabisException("Lisa je prazna");
+		}
+		
+		CvorJSListe pom = prvi;
+		int suma = 0;
+		int brojac = 0;
+		
+		while(pom != null) {
+			if(pom.podatak % 2 == 0) {
+				suma = suma + pom.podatak;
+				brojac++;
+			}
+			pom = pom.sledeci;
+		}
+		if(brojac != 0) {
+			return (double)(suma)/(double)(brojac);
+		}
+		
+		throw new LabisException("U lisit nema parnih");
+	}
+	
+	public CvorJSListe noviPrePrvog(CvorJSListe prvi, int p) throws LabisException{
+		
+		if (prvi == null) {
+			throw new LabisException("Lisa je prazna");
+		}
+		
+		CvorJSListe pom = prvi;
+		int suma = prvi.podatak;
+		
+		while(pom.sledeci != null) {
+			if(suma > p) {
+				break;
+			}
+			pom = pom.sledeci;
+			suma = suma + pom.podatak;
+		}
+		
+		CvorJSListe abc = new CvorJSListe(p, pom.sledeci);
+		pom.sledeci = abc;
+		
+		return prvi;
+		
+	}
+	
+	
+	
 }
