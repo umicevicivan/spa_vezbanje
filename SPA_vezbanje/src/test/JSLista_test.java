@@ -46,8 +46,26 @@ public class JSLista_test extends ListGenerator{
 //		}
 		
 
+//		try {
+//			a = o.noviPrePrvog(lista.prvi, 4);
+//			System.out.println("________________");
+//			ListGenerator.ispisiJSListu(a);
+//
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			a = o.invertovanjeBezPomocne(lista.prvi);
+//			System.out.println("________________");
+//			ListGenerator.ispisiJSListu(a);
+//
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
 		try {
-			a = o.noviPrePrvog(lista.prvi, 4);
+			a = o.invertovanjeSaPomocnom(lista.prvi);
 			System.out.println("________________");
 			ListGenerator.ispisiJSListu(a);
 

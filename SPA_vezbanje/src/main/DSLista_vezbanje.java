@@ -70,15 +70,15 @@ public class DSLista_vezbanje extends ADSLista {
 			throw new LabisException("Lista ne postoji");
 		}
 		
-		ADSLista cupka  = new ADSLista() {
+		ADSLista lista  = new ADSLista() {
 		};
 		
 		//ubaujem prvi element koji znam da postoji 100%
 		CvorDSListe novi = new CvorDSListe(prvi.podatak, null, null);
-		cupka.prvi = novi;
+		lista.prvi = novi;
 		
 		CvorDSListe pom = prvi.sledeci;
-		CvorDSListe pom2 = cupka.prvi;
+		CvorDSListe pom2 = lista.prvi;
 		while(pom != null) {
 			CvorDSListe novi1 = new CvorDSListe(pom.podatak, pom2, null);
 			pom2.sledeci = novi1;
@@ -86,10 +86,39 @@ public class DSLista_vezbanje extends ADSLista {
 			pom = pom.sledeci;
 		}
 		
-		return cupka.prvi;
+		return lista.prvi;
+			
+	}
+	
+	public CvorDSListe invertujBezNovih(CvorDSListe prvi) throws LabisException{
+		
+		if(prvi == null || prvi.sledeci == null) {
+			return prvi;
+		}
+		
+		CvorDSListe pom = prvi;
+		CvorDSListe pom2 = prvi;
+		
+		while(pom2.sledeci.sledeci != null) {
+			pom = pom2.sledeci;
+			pom2.sledeci = pom.sledeci;
+			pom.sledeci.prethodni = pom2; // ovde ce da vrati null poin ako u uslovu ostane samo po2.sledeci != null, zato na kraju moram da dodam poslednji
+			pom.sledeci = prvi;
+			pom.prethodni = prvi.prethodni;
+			prvi.prethodni = pom;
+			
+			prvi = pom;
+		}
+		//poslednji ubacujem na pocetak
+		pom = pom2.sledeci;
+		pom2.sledeci = null;
+		pom.sledeci = prvi;
+		pom.prethodni = null;
+		prvi.prethodni = pom;
+		prvi = pom;
 		
 		
-		
+		return prvi;
 		
 	}
 
