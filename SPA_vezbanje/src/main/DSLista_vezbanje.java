@@ -1,4 +1,4 @@
-package main;
+package umi.main;
 
 import labis.cvorovi.CvorDSListe;
 import labis.exception.LabisException;
@@ -6,7 +6,12 @@ import labis.liste.ADSLista;
 
 public class DSLista_vezbanje extends ADSLista {
 
-	// oleee radi
+	/**
+	 * Metoda koja menja mesta prva dva elementa u DS listi tako sto ne pravi novu strukturu
+	 * @param prvi pokazivac na prvi element DS liste
+	 * @return prvi ppokazivac na prvi element liste
+	 * @throws LabisException ukoliko je lista neposojeca, ili ima manje od dva elementa
+	 */
 	public CvorDSListe zameniPrvaDva(CvorDSListe prvi) throws LabisException {
 
 		if (prvi == null) {
@@ -30,7 +35,12 @@ public class DSLista_vezbanje extends ADSLista {
 
 		return prvi;
 	}
-
+	/**
+	 * Metoda vraca proizvod neparnih elemenata liste kojima su i prethodni i sledeci parni elementi.
+	 * @param prvi pokazivac na pocetak liste
+	 * @return proizvod proizvod neparnih kojima su prethodnik i sledbenik parni
+	 * @throws LabisException ukoliko lista ne postoji, ima jedan ili dva elementa
+	 */
 	public int vratiProizvod(CvorDSListe prvi) throws LabisException {
 
 		if (prvi == null) {
@@ -63,7 +73,12 @@ public class DSLista_vezbanje extends ADSLista {
 		return proizvod;
 
 	}
-
+	/**
+	 * Metoda koja klonira zadatu listu.
+	 * @param prvi pokazivac na pocetak liste
+	 * @return lista.prvi pokazivac na prvi element nove liste
+	 * @throws LabisException ukoliko pocetna lista ne postoji
+	 */
 	public CvorDSListe kloniraj(CvorDSListe prvi) throws LabisException{
 		
 		if(prvi == null) {
@@ -82,14 +97,19 @@ public class DSLista_vezbanje extends ADSLista {
 		while(pom != null) {
 			CvorDSListe novi1 = new CvorDSListe(pom.podatak, pom2, null);
 			pom2.sledeci = novi1;
-			pom2 = novi1;
+			pom2 = pom2.sledeci;
 			pom = pom.sledeci;
 		}
 		
 		return lista.prvi;
 			
 	}
-	
+	/**
+	 * Metoda koja invertuje postojeu listu tako sto NE pravi nove strukture 
+	 * @param prvi pokazivac na prvi element pocetne liste
+	 * @return prvi pokazivac na prvi element invertovane liste
+	 * @throws LabisException ukoliko pocetna lista ne postoji
+	 */
 	public CvorDSListe invertujBezNovih(CvorDSListe prvi) throws LabisException{
 		
 		if(prvi == null || prvi.sledeci == null) {
@@ -121,16 +141,4 @@ public class DSLista_vezbanje extends ADSLista {
 		return prvi;
 		
 	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

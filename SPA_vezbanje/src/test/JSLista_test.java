@@ -1,21 +1,22 @@
-package test;
+package umi.test;
 
 import labis.cvorovi.CvorJSListe;
 import labis.exception.LabisException;
 import labis.liste.AJSLista;
 import labis.test.ListGenerator;
-import main.JSLista_vezbanje;
+import umi.main.JSLista_vezbanje;
 
 public class JSLista_test extends ListGenerator{
 
 	public static void main(String[] args) {
 		
-		int[] niz = new int[] {1,2,3,3,5,6};	
+		int[] niz = new int[] {1,2};	
 		AJSLista lista = new AJSLista() {
 		};
 		ListGenerator.napraviJSListuCommon(lista, niz, false);
 		
 		CvorJSListe a;
+		int k;
 		
 		JSLista_vezbanje o = new JSLista_vezbanje();
 		ListGenerator.ispisiJSListu(lista.prvi);
@@ -64,15 +65,72 @@ public class JSLista_test extends ListGenerator{
 //			System.out.println(e);
 //		}
 		
-		try {
-			a = o.invertovanjeSaPomocnom(lista.prvi);
-			System.out.println("________________");
-			ListGenerator.ispisiJSListu(a);
+//		try {
+//			a = o.invertovanjeSaPomocnom(lista.prvi);
+//			System.out.println("________________");
+//			ListGenerator.ispisiJSListu(a);
+//
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		System.out.println(o.nadjiElementRekurzijom(lista.prvi, 4));
+		
+//		System.out.println(o.daLiJeSortiranaRastuce(lista.prvi));
+		
+//		a = o.klonirajListuRekurzivno(lista.prvi);
+//		System.out.println("__________");
+//		ListGenerator.ispisiJSListu(a);
+		
 
+//		try {
+//			k = o.prosekParnihCiklicna(lista.prvi);
+//			System.out.println(k);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			a = o.izbaciVece(lista.prvi);
+//			System.out.println("__________");
+//			ListGenerator.ispisiJSListu(a);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			a = o.ubaciKumulativ(lista.prvi, 0);
+//			System.out.println("__________");
+//			ListGenerator.ispisiJSListu(a);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			a = o.izbaciDuplikate(lista.prvi);
+//			System.out.println("__________");
+//			ListGenerator.ispisiJSListu(a);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		try {
+//			a = o.invertujBezDupkiata(lista.prvi);
+//			System.out.println("__________");
+//			ListGenerator.ispisiJSListu(a);
+//		} catch (LabisException e) {
+//			System.out.println(e);
+//		}
+		
+//		System.out.println(o.kolikoParnih(lista.prvi));
+//		o.ispisiListuNaopacke(lista.prvi);
+	
+		try {
+			k = o.vratiDrugiSaNajvisePonavljanja(lista.prvi);
+			System.out.println(k);
 		} catch (LabisException e) {
 			System.out.println(e);
 		}
-		
 		
 		
 	}
